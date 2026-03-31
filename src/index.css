@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Gochi Hand", cursive;
+  --font-body: "Gochi Hand", cursive;
+  --font-label: "Gochi Hand", cursive;
+  --font-sans: "Gochi Hand", cursive;
+  --font-display: "Gochi Hand", cursive;
+
+  --color-primary: #bc0100;
+  --color-surface: #f9f9f9;
+  --color-on-surface: #1a1c1c;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-body selection:bg-primary selection:text-white;
+  }
+}
+
+@layer utilities {
+  .sketch-box {
+    @apply border-3 border-on-surface relative;
+  }
+  .sketch-box::after {
+    content: '';
+    @apply absolute top-1 left-1 -right-2 -bottom-2 border-2 border-primary -z-10;
+  }
+  .marker-underline {
+    background-image: linear-gradient(120deg, #bc0100 0%, #bc0100 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: 0 88%;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
