@@ -12,7 +12,7 @@ export default function Home() {
             <img 
               alt="NO J Doodle" 
               className="max-w-[200px] md:max-w-[300px] h-auto" 
-              src="/NO J.png"
+              src={`${import.meta.env.BASE_URL}NO-J.png`}
               referrerPolicy="no-referrer"
             />
           </div>
