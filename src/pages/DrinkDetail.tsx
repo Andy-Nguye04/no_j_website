@@ -51,7 +51,7 @@ export default function DrinkDetail() {
             <img 
               alt={drink.name} 
               className="w-full h-full object-cover grayscale-[0.2] contrast-125" 
-              src={drink.image.startsWith('http') ? drink.image : (drink.image.startsWith('/') ? drink.image.slice(1) : drink.image)}
+              src={drink.image.startsWith('http') ? drink.image : `${import.meta.env.BASE_URL}${drink.image.startsWith('/') ? drink.image.slice(1) : drink.image}`}
               referrerPolicy="no-referrer"
             />
             {/* Overlay Graphics */}
